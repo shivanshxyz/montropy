@@ -1,0 +1,42 @@
+{
+  "name": "anti-geyser-rewards",
+  "version": "1.0.0",
+  "description": "Capital-efficient rewards engine that discourages transient farming",
+  "scripts": {
+    "node": "anvil",
+    "deploy:local": "forge script script/Deploy.s.sol:Deploy --rpc-url $RPC_URL --broadcast",
+    "deploy:monad": "./deploy-monad.sh",
+    "setup:program": "forge script script/SetupProgram.s.sol:SetupProgram --rpc-url $RPC_URL --broadcast",
+    "test": "forge test -vv",
+    "test:gas": "forge test --gas-report",
+    "build": "forge build",
+    "clean": "forge clean",
+    "simulate": "node simulator/runScenario.js",
+    "simulate:whale": "node simulator/runScenario.js simulator/scenarios/whale-attack.json",
+    "simulate:churner": "node simulator/runScenario.js simulator/scenarios/rapid-churner.json",
+    "simulate:dca": "node simulator/runScenario.js simulator/scenarios/gradual-entry.json",
+    "simulate:exit": "node simulator/runScenario.js simulator/scenarios/late-exit.json",
+    "visualize": "node simulator/visualize.js",
+    "compare": "node simulator/compareScenarios.js",
+    "advance": "node simulator/advanceEpoch.js",
+    "demo": "./deploy-and-simulate.sh",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "defi",
+    "rewards",
+    "liquidity-mining",
+    "ethereum",
+    "foundry"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0"
+  }
+}
+
