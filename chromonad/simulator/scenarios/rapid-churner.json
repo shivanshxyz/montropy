@@ -1,0 +1,49 @@
+{
+  "name": "Rapid Churner vs Patient LP",
+  "description": "Demonstrates how rapid in-out behavior gets penalized vs patient holding",
+  "program": {
+    "epochs": 10,
+    "epochLength": 86400,
+    "R_per_epoch": 1000,
+    "half_life": 2,
+    "alpha": 0.02,
+    "T_max": 10
+  },
+  "actors": [
+    {
+      "name": "PatientLP",
+      "deposits": [
+        {"epoch": 0, "amount": 1000}
+      ],
+      "withdraws": []
+    },
+    {
+      "name": "RapidChurner",
+      "deposits": [
+        {"epoch": 1, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 2}
+      ]
+    },
+    {
+      "name": "RapidChurner",
+      "deposits": [
+        {"epoch": 3, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 4}
+      ]
+    },
+    {
+      "name": "RapidChurner",
+      "deposits": [
+        {"epoch": 5, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 6}
+      ]
+    }
+  ]
+}
+

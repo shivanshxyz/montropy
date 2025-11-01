@@ -1,0 +1,33 @@
+{
+  "name": "Gradual Entry Strategy",
+  "description": "Tests Dollar-Cost Averaging (DCA) entry vs lump sum early entry",
+  "program": {
+    "epochs": 10,
+    "epochLength": 86400,
+    "R_per_epoch": 1000,
+    "half_life": 2,
+    "alpha": 0.02,
+    "T_max": 10
+  },
+  "actors": [
+    {
+      "name": "LumpSumLP",
+      "deposits": [
+        {"epoch": 0, "amount": 5000}
+      ],
+      "withdraws": []
+    },
+    {
+      "name": "DCA_LP",
+      "deposits": [
+        {"epoch": 0, "amount": 1000},
+        {"epoch": 2, "amount": 1000},
+        {"epoch": 4, "amount": 1000},
+        {"epoch": 6, "amount": 1000},
+        {"epoch": 8, "amount": 1000}
+      ],
+      "withdraws": []
+    }
+  ]
+}
+

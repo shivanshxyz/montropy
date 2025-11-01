@@ -1,0 +1,36 @@
+{
+  "name": "Whale Attack Scenario",
+  "description": "Tests how the system handles a whale entering late with massive capital vs early small LPs",
+  "program": {
+    "epochs": 10,
+    "epochLength": 86400,
+    "R_per_epoch": 1000,
+    "half_life": 2,
+    "alpha": 0.02,
+    "T_max": 10
+  },
+  "actors": [
+    {
+      "name": "SmallLP1",
+      "deposits": [
+        {"epoch": 0, "amount": 100}
+      ],
+      "withdraws": []
+    },
+    {
+      "name": "SmallLP2",
+      "deposits": [
+        {"epoch": 0, "amount": 100}
+      ],
+      "withdraws": []
+    },
+    {
+      "name": "Whale",
+      "deposits": [
+        {"epoch": 7, "amount": 10000}
+      ],
+      "withdraws": []
+    }
+  ]
+}
+

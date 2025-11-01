@@ -1,0 +1,38 @@
+{
+  "name": "Long-term LP vs Farmer Comparison",
+  "description": "Demonstrates how long-term LPs earn significantly more than short-term farmers",
+  "program": {
+    "epochs": 10,
+    "epochLength": 86400,
+    "R_per_epoch": 1000,
+    "half_life": 2,
+    "alpha": 0.02,
+    "T_max": 10
+  },
+  "actors": [
+    {
+      "name": "LongTermLP",
+      "deposits": [
+        {"epoch": 0, "amount": 1000}
+      ],
+      "withdraws": []
+    },
+    {
+      "name": "Farmer",
+      "deposits": [
+        {"epoch": 4, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 5}
+      ]
+    },
+    {
+      "name": "ModerateLP",
+      "deposits": [
+        {"epoch": 2, "amount": 1000}
+      ],
+      "withdraws": []
+    }
+  ]
+}
+

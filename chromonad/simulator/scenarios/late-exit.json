@@ -1,0 +1,49 @@
+{
+  "name": "Early Exit vs Late Exit",
+  "description": "Shows the cost of exiting early vs staying until the end",
+  "program": {
+    "epochs": 10,
+    "epochLength": 86400,
+    "R_per_epoch": 1000,
+    "half_life": 2,
+    "alpha": 0.02,
+    "T_max": 10
+  },
+  "actors": [
+    {
+      "name": "EarlyExiter",
+      "deposits": [
+        {"epoch": 0, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 3}
+      ]
+    },
+    {
+      "name": "MidExiter",
+      "deposits": [
+        {"epoch": 0, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 6}
+      ]
+    },
+    {
+      "name": "LateExiter",
+      "deposits": [
+        {"epoch": 0, "amount": 1000}
+      ],
+      "withdraws": [
+        {"epoch": 9}
+      ]
+    },
+    {
+      "name": "Hodler",
+      "deposits": [
+        {"epoch": 0, "amount": 1000}
+      ],
+      "withdraws": []
+    }
+  ]
+}
+
